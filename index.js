@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("Mongo db connected successfully"))
 .catch((error)=>console.log(error))
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/vendor',vendorRouter);
