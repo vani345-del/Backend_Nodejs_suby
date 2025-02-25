@@ -4,7 +4,7 @@ const jwt=require('jsonwebtoken');
 const bcrypt=require('bcryptjs');
 const dotEnv=require('dotenv')
 
-dotEnv.config()
+dotEnv.config();
 
 const secretKey=process.env.whatIsYourName;
 

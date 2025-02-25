@@ -5,8 +5,9 @@ const vendorRouter=require('./routes/vendorRouts')
 const bodyParser=require('body-parser');
 const firmRouter=require('./routes/firmRouter')
 const productRoutes=require("./routes/productRouter")
-const path=require('path')
 const cors=require('cors');
+const path=require('path')
+
 
 
 
@@ -14,12 +15,13 @@ const app=express()
 const PORT= process.env.PORT||4000;
 
 require("dotenv").config()
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("Mongo db connected successfully"))
 .catch((error)=>console.log(error))
 
-app.use(cors());
+
 app.use(bodyParser.json());
 
 app.use('/vendor',vendorRouter);
@@ -35,5 +37,5 @@ app.listen(PORT,()=>{
  });
 
  app.use('/',(req,res)=>{
-    res.send("<h1>Wlcomw to vani resturrant</h1>");
+    res.send("<h1>Wlcomw to suby</h1>");
 })
