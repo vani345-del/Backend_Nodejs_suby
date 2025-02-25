@@ -27,7 +27,7 @@ app.use('/vendor',vendorRouter);
 app.use('/firm',firmRouter);
 
 app.use('/product',productRoutes);
-app.use('uploads',express.static('uploads'));
+app.use('/uploads',express.static('uploads'));
 
 
 app.listen(PORT,()=>{
